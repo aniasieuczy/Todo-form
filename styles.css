@@ -1,0 +1,80 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-image: url("eren-namli-aZt4hpRwqaE-unsplash.jpg");
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    /* opacity: 0.5; */
+}
+
+.container{
+    /* border: 1px solid magenta; */
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 6rem;
+    box-sizing: border-box;
+}
+
+.content{
+    /* border: 1px solid green; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 1000px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 0 3px rgba(0,0,0, 0.3);
+    opacity: 0.9;
+    padding: 1.5rem 1rem;
+}
+
+.newInput {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content:space-between;
+    box-sizing: border-box;
+    min-width: 800px;
+    text-transform: capitalize;
+    padding: 0.3rem 2rem;
+    gap: 1;
+}
+.list{
+    /* border: 1px solid orchid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 800px;
+
+}
+
+input{
+    font-size: 1rem;
+    min-width: 500px;
+    padding: 0.5rem;
+}
+
+.completedTask {
+    text-decoration: line-through;
+}
+
+button {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: white;
+    background-color:  #107fe7;
+    font-weight: bold;
+    border: 0;
+    padding: 0.7rem 2rem;
+    border-radius: 5rem;
+}
+.actions {
+    /* border: 1px solid salmon; */
+    margin: 0 1rem;
+}
+
+
+
