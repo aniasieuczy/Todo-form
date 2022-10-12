@@ -1,70 +1,73 @@
 const form = document.querySelector("#newTodoForm");
-const input = document.querySelector("#newTodoInput");
-const list = document.querySelector('#list');
+const userInput = document.querySelector("#newTodoInput");
+const list = document.querySelector("#list");
 
-form.addEventListener('submit', function(e){
-    e.preventDefault();
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log(e);
+  const newTodo = userInput.value;
+  if (!newTodo) {
+    console.log("Add a new task");
+    return;
+  } else {
+    addTaskToList();
+    e.target[0].value = "";
+  }
+});
 
-    const newTodo = input.value;
-
-    if(!newTodo) {
-        console.log("Add a new task");
-        return;
-    }
+function addTaskToList() {
     const element = document.createElement("div");
     element.classList.add("list");
-   
-    const content = document.createElement("div");
-    // content.innerText = newTodo;
-    element.appendChild(content);
+    const input = createTodoInput();
+    element.appendChild(input);
+    // input.value = "";
+    element.appendChild(createEditButton(input));
+    element.appendChild(createDeleteButton(element));
+    list.appendChild(element);
 
+}
 
-    const newInput = document.createElement("input");
-    newInput.value = newTodo;
-    newInput.setAttribute("readOnly", "readonly");+
+function createTodoInput() {
+  let input = document.createElement("input");
+  input.value = userInput.value;
+  input.setAttribute("readOnly", "readonly");
+  
+//   input.addEventListener("click", () => {
+//     input.classList.toggle("completedTask");
+//   });
+  return input;
+}
 
+function createEditButton(input) {
+  const editBtn = document.createElement("button");
+  editBtn.innerHTML = "Edit";
+  // let input = createTodoInput();
 
-    content.appendChild(newInput);
+  editBtn.addEventListener("click", function (e) {
+    if (editBtn.innerText.toLowerCase() == "edit") {
+      input.removeAttribute("readonly");
+      input.focus();
+      editBtn.innerText = "Save";
+    } else {
+      input.setAttribute("readOnly", "readOnly");
+      editBtn.innerText = "Edit";
+    }
+  });
+  return editBtn;
+}
 
-    const actionsContainer = document.createElement('div');
-    const editBtn = document.createElement("button");
-    editBtn.innerHTML = "Edit";
+function createDeleteButton(element) {
     const deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = "Delete";
-    editBtn.classList.add("delete");
-    actionsContainer.appendChild(editBtn);
-    actionsContainer.appendChild(deleteBtn);
-    element.appendChild(actionsContainer);
+    deleteBtn.classList.add("delete");
+    // const element = document.querySelectorAll("input");
+
     
-    list.appendChild(element);
-    input.value = "";
-
-    editBtn.addEventListener("click", function(e) {
-        if(editBtn.innerText.toLowerCase() == "edit") {
-            newInput.removeAttribute("readonly");
-            newInput.focus();
-            editBtn.innerText = "Save";
-        } else {
-            newInput.setAttribute("readOnly", "readOnly");
-            editBtn.innerText = "Edit";
-        }
+    deleteBtn.addEventListener("click", function (e) {
+        list.removeChild(element);
     });
-
-    deleteBtn.addEventListener("click", function(e) {
-        element.remove();
-    });
-
-    newInput.addEventListener("click", () => {
-        newInput.classList.toggle("completedTask");
-    })
-})
-
-
-
-
-
-
-
+    return deleteBtn;
+}
 
 // const lis = document.querySelectorAll('li');
 // for(let li of lis) {
@@ -88,6 +91,3 @@ form.addEventListener('submit', function(e){
 // all.push(newLi);
 // input.value = "";
 // })
-
-
-
