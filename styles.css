@@ -23,7 +23,7 @@ body{
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 1000px;
+    width: 830px;
     box-sizing: border-box;
     background-color: white;
     box-shadow: 0 0 3px rgba(0,0,0, 0.3);
