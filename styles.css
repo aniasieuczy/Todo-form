@@ -31,6 +31,10 @@ body{
     padding: 1.5rem 1rem;
 } 
 
+.todoForm{
+    display: flex;
+    justify-content: space-between;
+}
 .newInput {
     /* border: 1px solid red; */
     display: flex;
@@ -47,6 +51,8 @@ body{
     justify-content: space-between;
     align-items: center;
     min-width: 800px;
+    /* margin-top: 0.1rem; */
+    margin: 0.1rem;
 
 }
 
@@ -54,6 +60,9 @@ input{
     font-size: 1rem;
     min-width: 500px;
     padding: 0.5rem;
+    background-color: #e8eaec;
+    border-radius: 5rem;
+    border: 0;
 }
 
 .completedTask {
@@ -61,7 +70,7 @@ input{
 }
 
 button {
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     color: white;
     background-color:  #107fe7;
@@ -70,10 +79,7 @@ button {
     padding: 0.7rem 2rem;
     border-radius: 5rem;
 }
-.actions {
-    /* border: 1px solid salmon; */
-    margin: 0 1rem;
-}
+
 
 
 

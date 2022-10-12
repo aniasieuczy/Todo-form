@@ -32,9 +32,9 @@ function createTodoInput() {
   input.value = userInput.value;
   input.setAttribute("readOnly", "readonly");
   
-//   input.addEventListener("click", () => {
-//     input.classList.toggle("completedTask");
-//   });
+  input.addEventListener("click", () => {
+    input.classList.toggle("completedTask");
+  });
   return input;
 }
 
@@ -59,9 +59,7 @@ function createEditButton(input) {
 function createDeleteButton(element) {
     const deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = "Delete";
-    deleteBtn.classList.add("delete");
-    // const element = document.querySelectorAll("input");
-
+    // deleteBtn.classList.add("delete");
     
     deleteBtn.addEventListener("click", function (e) {
         list.removeChild(element);
