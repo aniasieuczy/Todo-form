@@ -24,7 +24,6 @@ function addTaskToList() {
     element.appendChild(createEditButton(input));
     element.appendChild(createDeleteButton(element));
     list.appendChild(element);
-
 }
 
 function createTodoInput() {
@@ -66,6 +65,8 @@ function createDeleteButton(element) {
     });
     return deleteBtn;
 }
+
+
 
 // const lis = document.querySelectorAll('li');
 // for(let li of lis) {

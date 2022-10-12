@@ -31,10 +31,6 @@ body{
     padding: 1.5rem 1rem;
 } 
 
-.todoForm{
-    display: flex;
-    justify-content: space-between;
-}
 .newInput {
     /* border: 1px solid red; */
     display: flex;
@@ -48,11 +44,10 @@ body{
 .list{
     /* border: 1px solid orchid; */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
     min-width: 800px;
-    /* margin-top: 0.1rem; */
-    margin: 0.1rem;
+    margin-top: 0.1rem;   
 
 }
 
